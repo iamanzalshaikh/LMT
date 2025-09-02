@@ -22,7 +22,7 @@ import ViewCourse from './pages/ViewCourse.jsx'
 import ScrollToTop from './component/ScrollToTop.jsx'
 import ViewLectures from './pages/ViewLectures.jsx'
 import SearchWithAi from './pages/SearchWithAi.jsx'
-export const serverUrl = "http://localhost:8002"
+export const serverUrl = "https://lmt-backend-yv4u.onrender.com"
 const App = () => {
 getCurrentUser()
 getCreatorCourse()
