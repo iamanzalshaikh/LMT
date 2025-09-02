@@ -43,10 +43,11 @@ export const signup = async (req, res) => {
     // set cookie
 res.cookie("token", token, {
   httpOnly: true,
-  sameSite: "strict",
-  secure: true, // MUST be true on production (HTTPS)
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  secure: true,                 // required for SameSite=None
+  sameSite: "none",             // cross-site cookie
+  maxAge: 7 * 24 * 60 * 60 * 1000,
 });
+
 
 
     res.status(201).json({
@@ -79,12 +80,13 @@ export const login = async (req, res) => {
     let token = genToken(user._id);
 
     // set cookie
-  res.cookie("token", token, {
+res.cookie("token", token, {
   httpOnly: true,
-  sameSite: "strict",
-  secure: true, // MUST be true on production (HTTPS)
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  secure: true,                 // required for SameSite=None
+  sameSite: "none",             // cross-site cookie
+  maxAge: 7 * 24 * 60 * 60 * 1000,
 });
+
 
 
     res.status(200).json({
@@ -100,7 +102,7 @@ export const logout = async (req, res) => {
   try {
     await res.clearCookie("token", {
       httpOnly: true,
-      sameSite: "strict",
+      sameSite: "none",
       secure: true,
     });
     res.status(200).json({ message: "Logout successful" });
@@ -214,12 +216,13 @@ export const googleLogin = async (req, res) => {
         const token = genToken(user._id);
         console.log("🔐 Token Generated:", token);
 
-      res.cookie("token", token, {
+res.cookie("token", token, {
   httpOnly: true,
-  sameSite: "strict",
-  secure: true, // MUST be true on production (HTTPS)
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  secure: true,                 // required for SameSite=None
+  sameSite: "none",             // cross-site cookie
+  maxAge: 7 * 24 * 60 * 60 * 1000,
 });
+
 
 
         // ✅ Return role and other useful fields for frontend
