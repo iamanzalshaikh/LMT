@@ -14,9 +14,10 @@ const app = express();
 
 // Correct CORS middleware with origin and credentials
 app.use(cors({
-  origin: 'https://lmt-frontend1.netlify.app/',
+  origin: 'https://lmt-frontend1.netlify.app', // REMOVE the trailing slash
   credentials: true,
 }));
+
 
 // Middleware 
 app.use(express.json());
