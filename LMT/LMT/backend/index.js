@@ -14,7 +14,7 @@ const app = express();
 
 // Correct CORS middleware with origin and credentials
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://lmt-frontend1.netlify.app/',
   credentials: true,
 }));
 
