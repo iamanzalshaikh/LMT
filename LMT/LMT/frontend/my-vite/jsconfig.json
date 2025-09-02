@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "checkJs": false,          // ⛔ Turn off TypeScript checking in .js files
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "backend"]
+}
