@@ -4,7 +4,7 @@ import { SiViaplay } from 'react-icons/si';
 import Nav from "../component/Nav";
 import home1 from '../assets/home1.jpg';
 import searchAi from '../assets/SearchAi.png';
-import Logos from '../component/logos';
+import Logos from '../component/Logos';
 import ExploreCourses from '../component/ExploreCourses';
 import CardPage from '../component/CardPage';
 import About from '../component/About';
